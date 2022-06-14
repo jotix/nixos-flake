@@ -115,6 +115,11 @@
     vscode
     firefox
     xfce.xfce4-whiskermenu-plugin
+    numix-gtk-theme
+    numix-icon-theme
+    numix-cursor-theme
+    ubuntu_font_family
+    google-fonts
     gnucash
     libreoffice
     gimp
