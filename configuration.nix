@@ -43,6 +43,8 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -114,12 +116,9 @@
     git
     vscode
     firefox
-    xfce.xfce4-whiskermenu-plugin
-    numix-gtk-theme
-    numix-icon-theme
-    numix-cursor-theme
+    gnome.gnome-tweaks
     ubuntu_font_family
-    google-fonts
+    #google-fonts
     gnucash
     libreoffice
     gimp
@@ -150,8 +149,6 @@
   };
 
   services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
