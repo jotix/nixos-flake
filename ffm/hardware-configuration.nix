@@ -4,24 +4,27 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ohci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f8694542-89d0-40de-a5fe-187a0ec16ba9";
-      fsType = "ext4";
-    };
+  fileSystems."/" = { 
+    device = "/dev/disk/by-uuid/f8694542-89d0-40de-a5fe-187a0ec16ba9";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/E03D-BA50";
-      fsType = "vfat";
-    };
+  fileSystems."/boot/efi" = { 
+    device = "/dev/disk/by-uuid/E03D-BA50";
+    fsType = "vfat";
+  };
+
+  fileSystems."/mnt/data" = {
+    device = "/dev/disk/by-uuid/005a0f56-684b-4562-9b4d-4b9c6a4b443c";
+    fsType = "ext4";
+  };
 
   swapDevices = [ ];
 

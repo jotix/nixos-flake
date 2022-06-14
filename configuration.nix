@@ -109,6 +109,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pass
     wget
     neovim
     git
@@ -127,6 +128,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    pinEntryFlavor = "curses";
   };
 
   # List services that you want to enable:
