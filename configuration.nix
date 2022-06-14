@@ -77,13 +77,13 @@
 
   home-manager.users.jotix = { pkgs, ... }: {
     # home.packages = [ pkgs.atool pkgs.httpie ];
-    # programs.bash = {
-    #   enable = true;
-    #   shellAliases = {
-    #     ll = "exa -l";
-    #     la = "exa -lha";
-    #   };
-    # };
+    programs.bash = {
+      enable = true;
+      shellAliases = {
+        ll = "exa -l";
+        la = "exa -lha";
+      };
+    };
     programs.neovim = {
       enable = true;
       extraConfig = ''
@@ -99,7 +99,6 @@
     };
     programs.bat.enable = true;
     programs.exa.enable = true;
-    programs.exa.enableAliases = true;
     programs.powerline-go.enable = true;
   };
 
@@ -128,7 +127,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinEntryFlavor = "curses";
+    pinentryFlavor = "curses";
   };
 
   # List services that you want to enable:
