@@ -99,6 +99,8 @@
         vim-nix
 	vim-startify
       ];
+      viAlias = true;
+      vimAlias = true;
     };
     programs.git = {
       enable = true;
