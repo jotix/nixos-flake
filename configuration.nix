@@ -117,6 +117,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     pass
+    wl-clipboard
+    xclip
     wget
     neovim
     git
