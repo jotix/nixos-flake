@@ -43,8 +43,10 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -109,15 +111,8 @@
       pictures = "/home/jotix/Sync/Pictures";
     };
 
-    programs.gpg.enable = true;
-    programs.gpg.homedir = "/home/jotix/Sync/.gnupg";
-    
-    services.gpg-agent.enable = true;
-    services.gpg-agent.pinentryFlavor = "gnome3";
-    services.gpg-agent.enableSshSupport = true;
-    
     programs.password-store.enable = true;
-    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Sync/.password-store"; };
+    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Sync/Vault/password-store"; };
 
     services.syncthing.enable = true;
   };
@@ -145,19 +140,21 @@
     pavucontrol
   ];
 
+  programs.neovim.defaultEditor = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "curses";
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "curses";
+  };
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # services.syncthing = {
   #   enable = true;
