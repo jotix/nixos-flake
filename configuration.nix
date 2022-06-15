@@ -102,6 +102,12 @@
     programs.bat.enable = true;
     programs.exa.enable = true;
     programs.powerline-go.enable = true;
+
+    xdg.userDirs = {
+      enable = true;
+      documents = "/home/jotix/Sync/Documents";
+      pictures = "/home/jotix/Sync/Pictures";
+    };
   };
 
   # Allow unfree packages
