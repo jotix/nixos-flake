@@ -1,4 +1,4 @@
-### share configuration
+#gi## share configuration
 
 { config, pkgs, ... }:
 
@@ -56,6 +56,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [ cups-zj-58 ];
 
   # Enable sound with pipewire.
   sound.enable = true;
