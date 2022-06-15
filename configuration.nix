@@ -95,6 +95,10 @@
         set nobackup
         set number
       '';
+      plugins = with pkgs.vimPlugins; [
+        vim-nix
+	vim-startify
+      ];
     };
     programs.git = {
       enable = true;
