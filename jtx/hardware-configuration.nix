@@ -6,25 +6,30 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ohci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  # fileSystems."/" = { 
-  #   device = "/dev/disk/by-uuid/f8694542-89d0-40de-a5fe-187a0ec16ba9";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/" = { 
+    device = "/dev/disk/by-uuid/9b406aed-f56a-4934-80b8-728452d05abc";
+    fsType = "ext4";
+  };
 
-  # fileSystems."/boot/efi" = { 
-  #   device = "/dev/disk/by-uuid/E03D-BA50";
-  #   fsType = "vfat";
-  # };
+  fileSystems."/boot" = { 
+    device = "/dev/disk/by-uuid/D480-2000";
+    fsType = "vfat";
+  };
 
-  # fileSystems."/mnt/data" = {
-  #   device = "/dev/disk/by-uuid/005a0f56-684b-4562-9b4d-4b9c6a4b443c";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/mnt/jtx-ssd" = { 
+    device = "/dev/disk/by-label/jtx-ssd";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/jtx-nvme" = { 
+    device = "/dev/disk/by-label/jtx-nvme";
+    fsType = "ext4";
+  };
 
   swapDevices = [ ];
 
@@ -33,8 +38,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
