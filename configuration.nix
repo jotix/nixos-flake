@@ -108,6 +108,18 @@
       documents = "/home/jotix/Sync/Documents";
       pictures = "/home/jotix/Sync/Pictures";
     };
+
+    programs.gpg.enable = true;
+    programs.gpg.homedir = "/home/jotix/Sync/.gnupg";
+    
+    services.gpg-agent.enable = true;
+    services.gpg-agent.pinentryFlavor = "gnome3";
+    services.gpg-agent.enableSshSupport = true;
+    
+    programs.password-store.enable = true;
+    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Sync/.password-store"; };
+
+    services.syncthing.enable = true;
   };
 
   # Allow unfree packages
@@ -116,7 +128,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pass
+    # pass
     wl-clipboard
     xclip
     wget
@@ -135,26 +147,26 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryFlavor = "curses";
-  };
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  #   pinentryFlavor = "curses";
+  # };
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    user = "jotix";
-    dataDir = "/home/jotix";
-    configDir = "/home/jotix/.config/syncthing";
-    overrideFolders = false;
-    overrideDevices = false;
-  };
+  # services.syncthing = {
+  #   enable = true;
+  #   user = "jotix";
+  #   dataDir = "/home/jotix";
+  #   configDir = "/home/jotix/.config/syncthing";
+  #   overrideFolders = false;
+  #   overrideDevices = false;
+  # };
 
   services.flatpak.enable = true;
 
