@@ -140,6 +140,7 @@
     firefox
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
+    libappindicator
     ubuntu_font_family
     #google-fonts
     gnucash
