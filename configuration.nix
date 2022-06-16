@@ -139,6 +139,7 @@
     vscode
     firefox
     gnome.gnome-tweaks
+    gnomeExtensions.appindicator
     ubuntu_font_family
     #google-fonts
     gnucash
