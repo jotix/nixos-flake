@@ -145,6 +145,7 @@
     libreoffice
     gimp
     pavucontrol
+    appimage-run
   ];
 
   programs.neovim.defaultEditor = true;
@@ -162,6 +163,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.fstrim.enable = true;
 
   # services.syncthing = {
   #   enable = true;
