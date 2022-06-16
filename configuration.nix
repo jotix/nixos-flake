@@ -138,6 +138,7 @@
     git
     vscode
     firefox
+    google-chrome
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
     libappindicator
