@@ -19,10 +19,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  
+  # enable virtualisation
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+  
   # Set your time zone.
   time.timeZone = "America/Argentina/Buenos_Aires";
 
@@ -77,7 +83,7 @@
   users.users.jotix = {
     isNormalUser = true;
     description = "jotix";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   home-manager.users.jotix = { pkgs, ... }: {
@@ -138,6 +144,7 @@
     git
     vscode
     firefox
+    virt-manager
     digikam
     google-chrome
     gnome.gnome-tweaks
@@ -150,6 +157,7 @@
     gimp
     pavucontrol
     appimage-run
+    python3Full
   ];
 
   programs.neovim.defaultEditor = true;
