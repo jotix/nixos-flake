@@ -158,6 +158,7 @@
     pavucontrol
     appimage-run
     python3Full
+    vial
   ];
 
   programs.neovim.defaultEditor = true;
@@ -175,7 +176,14 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Enable fstrim
   services.fstrim.enable = true;
+
+  # Enable vial udev rule
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666", TAG+="uaccess", TAG+="udev-acl"
+  '';
 
   # services.syncthing = {
   #   enable = true;
