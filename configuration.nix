@@ -143,7 +143,7 @@
     neovim
     git
     vscode
-    firefox
+    firefox-wayland
     virt-manager
     digikam
     google-chrome
