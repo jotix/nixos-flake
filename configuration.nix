@@ -180,6 +180,12 @@
   # Enable fstrim
   services.fstrim.enable = true;
 
+  services.accounts-daemon.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
+  environment.variables = {
+    WEBKIT_FORCE_SANDBOX = "0";
+  };
+
   # Enable vial udev rule
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666", TAG+="uaccess", TAG+="udev-acl"
