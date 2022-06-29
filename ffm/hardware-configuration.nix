@@ -12,17 +12,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/f8694542-89d0-40de-a5fe-187a0ec16ba9";
+    device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
 
   fileSystems."/boot/efi" = { 
-    device = "/dev/disk/by-uuid/E03D-BA50";
+    device = "/dev/disk/by-label/EFI";
     fsType = "vfat";
   };
 
   fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/005a0f56-684b-4562-9b4d-4b9c6a4b443c";
+    device = "/dev/disk/by-label/data";
     fsType = "ext4";
   };
 
