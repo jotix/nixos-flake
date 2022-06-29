@@ -151,7 +151,7 @@
     gnomeExtensions.appindicator
     libappindicator
     ubuntu_font_family
-    #google-fonts
+    google-fonts
     gnucash
     libreoffice
     gimp
