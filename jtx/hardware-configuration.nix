@@ -12,12 +12,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/9b406aed-f56a-4934-80b8-728452d05abc";
+    device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
 
   fileSystems."/boot/efi" = { 
-    device = "/dev/disk/by-uuid/D480-2000";
+    device = "/dev/disk/by-label/EFI";
     fsType = "vfat";
   };
 
@@ -28,6 +28,11 @@
 
   fileSystems."/mnt/jtx-nvme" = { 
    device = "/dev/disk/by-label/jtx-nvme";
+   fsType = "ext4";
+  };
+  
+  fileSystems."/mnt/jtx-hd" = { 
+   device = "/dev/disk/by-label/jtx-hd";
    fsType = "ext4";
   };
 
