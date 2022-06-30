@@ -119,6 +119,7 @@
     programs.powerline-go.enable = true;
 
     programs.password-store.enable = true;
+    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Documents/Vault/password-store"; };
 
     services.syncthing.enable = true;
   };
