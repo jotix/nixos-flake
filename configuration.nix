@@ -118,14 +118,7 @@
     programs.exa.enable = true;
     programs.powerline-go.enable = true;
 
-    xdg.userDirs = {
-      enable = true;
-      documents = "/home/jotix/Sync/Documents";
-      pictures = "/home/jotix/Sync/Pictures";
-    };
-
     programs.password-store.enable = true;
-    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Sync/Vault/password-store"; };
 
     services.syncthing.enable = true;
   };
@@ -179,12 +172,6 @@
 
   # Enable fstrim
   services.fstrim.enable = true;
-
-  services.accounts-daemon.enable = true;
-  services.gnome.gnome-online-accounts.enable = true;
-  environment.variables = {
-    WEBKIT_FORCE_SANDBOX = "0";
-  };
 
   # Enable vial udev rule
   services.udev.extraRules = ''
