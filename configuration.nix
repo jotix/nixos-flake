@@ -117,11 +117,6 @@
     programs.bat.enable = true;
     programs.exa.enable = true;
     programs.powerline-go.enable = true;
-
-    programs.password-store.enable = true;
-    programs.password-store.settings = { PASSWORD_STORE_DIR = "/home/jotix/Documents/Vault/password-store"; };
-
-    services.syncthing.enable = true;
   };
 
   # Allow unfree packages
@@ -130,7 +125,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # pass
+    pass
     wl-clipboard
     xclip
     wget
@@ -138,6 +133,7 @@
     git
     vscode
     firefox-wayland
+    microsoft-edge
     virt-manager
     digikam
     google-chrome
