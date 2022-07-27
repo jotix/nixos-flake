@@ -88,6 +88,9 @@
 
   home-manager.users.jotix = { pkgs, ... }: {
     # home.packages = [ pkgs.atool pkgs.httpie ];
+    home.sessionVariables = {
+      EDITOR = "nvim";
+    };
     programs.bash = {
       enable = true;
       shellAliases = {
@@ -133,7 +136,6 @@
     git
     vscode
     firefox-wayland
-    microsoft-edge
     virt-manager
     digikam
     google-chrome
