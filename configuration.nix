@@ -135,7 +135,6 @@
     neovim
     git
     vscode
-    firefox-wayland
     virt-manager
     digikam
     google-chrome
